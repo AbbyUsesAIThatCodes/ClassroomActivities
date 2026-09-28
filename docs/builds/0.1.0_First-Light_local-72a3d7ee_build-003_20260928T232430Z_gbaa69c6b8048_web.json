@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "codename": "First Light",
+  "codename_slug": "First-Light",
+  "status": "development",
+  "scope": "local-72a3d7ee",
+  "pr": null,
+  "ordinal": 3,
+  "built_at_utc": "2026-09-28T23:24:30.208Z",
+  "source_revision": "baa69c6b8048ef54fc21ef34b5a55c46c194e5cb",
+  "source_dirty": false,
+  "source_fingerprint": "16b1d952b295593c6df4132890b621eb093124fd87793b7160dbfeeb591bf9b2",
+  "target": "web",
+  "identifier": "0.1.0_First-Light_local-72a3d7ee_build-003_20260928T232430Z_gbaa69c6b8048_web"
+}
