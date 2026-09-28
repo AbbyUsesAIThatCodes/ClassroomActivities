@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {DraftStore} from '../src/storage.js';
+const memory=()=>{const data=new Map();return {getItem:key=>data.get(key)??null,setItem:(key,value)=>data.set(key,value),removeItem:key=>data.delete(key)};};
+test('storage denial and quota failure never claim success',()=>{const denied=new DraftStore('a',()=>{throw Error('blocked');});assert.equal(denied.read().ok,false);assert.equal(denied.save({}).ok,false);const m=memory();const s=new DraftStore('a',()=>m);s.read();m.setItem=()=>{throw Error('quota');};assert.equal(s.save({answer:'kept in memory'}).ok,false);assert.equal(m.getItem('a'),null);});
+test('a stale tab cannot silently replace the saved draft',()=>{const m=memory(),a=new DraftStore('a',()=>m),b=new DraftStore('a',()=>m);a.read();b.read();assert.equal(a.save({answer:'first'}).ok,true);assert.equal(b.save({answer:'second'}).ok,false);assert.equal(JSON.parse(m.getItem('a')).answer,'first');});
+test('quarantined corrupt data remains untouched until explicit reset',()=>{const m=memory();m.setItem('a','broken');const s=new DraftStore('a',()=>m);assert.equal(s.read().raw,'broken');s.quarantine();assert.equal(s.save({}).ok,false);assert.equal(m.getItem('a'),'broken');assert.equal(s.reset().ok,true);assert.equal(s.save({answer:'fresh'}).ok,true);});
+test('clearing one activity leaves another intact',()=>{const m=memory();const a=new DraftStore('a',()=>m),b=new DraftStore('b',()=>m);a.read();b.read();a.save({answer:'one'});b.save({answer:'two'});a.reset();assert.equal(JSON.parse(m.getItem('b')).answer,'two');});

@@ -1,0 +1,20 @@
+{
+  "content_format": "reviewed-student-content-v1",
+  "activity_id": "workflow-practice",
+  "content_revision": "C01",
+  "title": "Practice Saving Your Work",
+  "authorship": "Newly authored for Classroom Activities with AI assistance. No external curriculum source or answer key is used.",
+  "introduction": ["Use this short activity to practice a draft backup and part-by-part answer downloads. Your teacher will tell you whether to attach the practice files to Classroom."],
+  "parts": [{"number":1,"title":"Predict And Try","questions":[1]},{"number":2,"title":"Reflect And Download","questions":[2]}],
+  "questions": [
+    {"id":"q1","number":1,"title":"Try A Draft Backup","part":1,"blocks":[
+      {"type":"text","text":"Before downloading a Draft Backup, describe what you expect that file to contain. Then download one and describe what happened."},
+      {"type":"field","id":"q1-predict","label":"My prediction","kind":"paragraph","purpose":"prediction"},
+      {"type":"field","id":"q1-observe","label":"My observation","kind":"paragraph","purpose":"response"}
+    ]},
+    {"id":"q2","number":2,"title":"Keep A Readable Copy","part":2,"blocks":[
+      {"type":"text","text":"Use the Part Submission button, download a readable copy, and open it. Describe where you found your name and answers."},
+      {"type":"field","id":"q2-reflect","label":"What I found","kind":"paragraph","purpose":"response"}
+    ]}
+  ]
+}
