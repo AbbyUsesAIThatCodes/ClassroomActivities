@@ -41,7 +41,7 @@ function start(item) {
   const a=item.activity,hash=item.hash;
   const store=new DraftStore(storageKey({id:a.activity_id,revision:a.content_revision,fingerprint:hash}));
   let draft=freshDraft(a,hash),showMissing=false;
-  const saved=store.read();let initialWarning='';
+  const saved=store.read(),olderVersions=store.related(a.activity_id);let initialWarning='';
   if(saved.ok && saved.raw!==null) {try {draft=validateDraft(JSON.parse(saved.raw),a,hash);}catch {store.quarantine();initialWarning='The saved draft could not be read safely. It has been left untouched. Download the Saved Browser Data for recovery; browser saving is paused.';}}
   if(!saved.ok)initialWarning=saved.message;
   const query=new URL(location.href).searchParams;
@@ -67,6 +67,12 @@ function start(item) {
   toolbar.append(button('Download Draft Backup',backup,{id:'backup'}),button('Restore Draft Backup',()=>fileInput.click(),{id:'restore'}),button('Start New Draft',newDraft,{class:'quiet',id:'new-draft'}));
   const fileInput=el('input',null,{type:'file',accept:'.json,application/json',class:'file-input',id:'restore-file','aria-label':'Choose A Draft Backup'});fileInput.addEventListener('change',restore);right.append(fileInput);
   if(saved.raw!==null && initialWarning)toolbar.append(button('Download Saved Browser Data',()=>download(saved.raw,'unreadable-browser-draft.txt','text/plain')));
+  if(olderVersions.length){
+    const oldNotice=el('div',null,{class:'notice'});oldNotice.append(el('p',`This browser has ${olderVersions.length} saved draft(s) for a different version of this activity. They are preserved separately; their answers have not been moved onto these prompts.`),button('Recover Other Saved Versions',()=>{
+      const m=modal('Other Saved Versions');m.content.append(el('p','Download an earlier draft to keep its answers. Restore it only in its matching activity version; ask your teacher if you no longer have that link.'));
+      olderVersions.forEach((copy,index)=>m.actions.append(button(`Download Earlier Draft ${index+1} (${copy.revision})`,()=>download(copy.raw,`${a.activity_id}_${copy.revision}_EARLIER-DRAFT-${index+1}.json`))));m.show();
+    }));right.append(oldNotice);
+  }
   const article=el('article',null,{class:'panel question','aria-labelledby':'question-title'});right.append(article);
   const controls=el('div',null,{class:'navigation'}),previous=button('← Previous',()=>navigate(current-1),{id:'previous'}),position=el('span',null,{id:'question-position'}),next=button('Next →',()=>navigate(current+1),{id:'next'});controls.append(previous,position,next);right.append(controls);
   const submission=button('Prepare Part Submission',prepareSubmission,{class:'primary',id:'prepare-submission'});const submissionBar=el('div',null,{class:'toolbar'});submissionBar.append(submission);right.append(submissionBar);

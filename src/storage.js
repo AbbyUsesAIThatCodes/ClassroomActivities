@@ -5,6 +5,16 @@ export class DraftStore {
     try { this.raw=this.provider().getItem(this.key); return {ok:true,raw:this.raw}; }
     catch { this.blocked=true; return {ok:false,message:'Browser saving is unavailable. Keep this tab open and download a Draft Backup before leaving.'}; }
   }
+  related(activityId) {
+    try {
+      const storage=this.provider(),prefix=`classroom-activities:draft:v1:${activityId}:`,copies=[];
+      for(let index=0;index<storage.length;index++){
+        const key=storage.key(index);
+        if(key && key.startsWith(prefix) && key!==this.key)copies.push({key,raw:storage.getItem(key),revision:key.slice(prefix.length).split(':')[0]});
+      }
+      return copies;
+    } catch { return []; }
+  }
   quarantine() { this.blocked=true; }
   save(draft) {
     if (this.blocked) return {ok:false,message:'Browser saving is paused to protect your work. Download a Draft Backup. Reload to inspect the saved copy, or deliberately start a new draft.'};

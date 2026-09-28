@@ -4,7 +4,7 @@
 
 The dependency-free shared shell uses only the cleared lever selection and newly authored workflow-practice content. The original reviewed lever wording, diagrams, and content hash remain unchanged. Public tests use fictional identities and deliberately arbitrary responses, not a teacher key.
 
-- `npm test`: 13 focused checks pass, including schema isolation, prediction/observation preservation, strict restore rejection, per-part snapshots, storage failures, stale tabs, explicit public-file selection, and simulated concurrent durable build allocation.
+- `npm test`: 14 focused checks pass, including schema isolation, prediction/observation preservation, strict restore rejection, per-part snapshots, storage failures, stale tabs, explicit public-file selection, and simulated concurrent durable build allocation.
 - `npm run verify:content`: 14 questions, 95 controls, 20 prediction fields, two sketches, and 14 diagrams pass exact-byte and student-only checks.
 - `tests/browser-smoke.mjs`: Chromium source-preview checks pass for desktop and 390-pixel layouts, autosave reload, actual JSON/text/backup downloads, restore confirmation, invalid/submission rejection, per-part exports, earlier-response reference, missing-field focus, activity isolation, keyboard navigation, literal answer markup, cross-tab warning, blocked storage, and corrupt saved-data recovery.
 
