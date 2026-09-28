@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0",
+  "codename": "First Light",
+  "codename_slug": "First-Light",
+  "status": "development",
+  "milestone": "Shared Activity And Answer-File Workflow",
+  "version_range": "0.1.x"
+}

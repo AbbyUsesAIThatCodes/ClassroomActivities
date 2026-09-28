@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Preserve the September 28, 2026 decisions in a durable, reviewable form and make the next conversation easy to resume. This checkpoint contains documentation only. Unreviewed activity files are retained separately in the private recovery materials.
+Preserve the September 28, 2026 decisions in a durable, reviewable form and make the next conversation easy to resume. The original checkpoint contained documentation only. Issues #1 and #2 now provide selected content and a development activity workflow; no class-wide release is implied. Unreviewed activity files are retained separately in the private recovery materials.
 
 Read [Decisions And Discussion](DECISIONS.md) for the full distinction between agreed direction, proposals, historical behavior, and open decisions.
 
@@ -32,3 +32,9 @@ Read [Decisions And Discussion](DECISIONS.md) for the full distinction between a
 ## Resume Instructions
 
 Read this file, DECISIONS.md, AGENTS.md, and the selected issue. Retrieve the owner's private recovery checkpoint only when source review or implementation requires it. Do not publish that archive or quote its unreviewed contents into a public issue. Work on one bounded task and report the actual validation performed.
+
+## Current Handoff
+
+The provenance selection is merged. Issue #2 adds the reusable interface, protected draft recovery, separate per-part JSON/text submissions, and First Light build identity. See [Verification](VERIFICATION.md) for the actual tested build.
+
+Next is [issue #3](https://github.com/AbbyUsesAIThatCodes/ClassroomActivities/issues/3): choose hosting, verify the selected lever game against the activity on managed school devices, and complete a real download → attachment → Turn In round trip. Preserve the difference between browser automation and a school-device trial. Automated grading, imports, and class-wide release remain outside this PR.

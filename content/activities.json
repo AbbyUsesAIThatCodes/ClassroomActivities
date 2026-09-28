@@ -1,0 +1,4 @@
+[
+  {"id":"levers-load-effort-distance","path":"content/levers/student-content.json","description":"Predict, investigate, and explain with the separate lever game."},
+  {"id":"workflow-practice","path":"content/workflow-practice/student-content.json","description":"A short practice activity for saving, restoring, and downloading work."}
+]

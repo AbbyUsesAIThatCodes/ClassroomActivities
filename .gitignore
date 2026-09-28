@@ -1,0 +1,4 @@
+dist/
+.local-builds/
+node_modules/
+test-results/
