@@ -1,0 +1,1133 @@
+{
+  "content_format": "reviewed-student-content-v1",
+  "activity_id": "levers-load-effort-distance",
+  "content_revision": "C01",
+  "title": "Levers: Load, Effort, And Distance",
+  "authorship": "Independently developed for AbbyUsesAIThatCodes with AI assistance. Not an official PLTW product; no affiliation or endorsement is implied.",
+  "introduction": [
+    "Work with the lever game linked by your teacher. Keep the game and this activity in separate tabs, or place them side by side when both are readable.",
+    "For a fresh setup, use Reset. For a continuing trial, keep the arrangement specified in the question. Hold the beam with Hold Level before editing values. A button labeled Release means the beam is already held.",
+    "Hide Math before making a prediction. If the button reads Show Math, the calculations are already hidden. Record your original prediction before using Release, then record what you observe in the separate result field. Keep your first prediction when you retry.",
+    "Use the game readouts for measurements. The drawings explain the arrangements; do not measure their printed or displayed lengths. They show the apparatus before the later balance pointer was added.",
+    "Here, balance means the two labeled masses have equal turning effects at level. Start each comparison held level and at rest, then release it. Do not use a momentary horizontal position during motion as your only evidence.",
+    "Use paper for the requested sketches. Keep your Part 1 work available for Part 2. Your teacher will provide the submission steps when the digital activity is ready."
+  ],
+  "parts": [
+    {
+      "number": 1,
+      "title": "Predict And Investigate",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Explain And Apply",
+      "questions": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "number": 1,
+      "title": "Identify The Parts",
+      "part": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The gold crate is the load; the teal hanging mass supplies the effort; the purple support is the fulcrum. Both objects apply downward forces. Mass uses grams (g); distance uses millimeters (mm)."
+        },
+        {
+          "type": "image",
+          "src": "assets/q01.png",
+          "alt": "The complete apparatus: a load rests on the beam, an effort mass hangs from the opposite arm, and the fulcrum supports the pivot."
+        },
+        {
+          "type": "field",
+          "id": "q1-1",
+          "label": "The object we want the lever to lift is the…",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Effort",
+            "Load",
+            "Fulcrum"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q1-2",
+          "label": "The input force used to operate the lever is the…",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Effort",
+            "Load",
+            "Fulcrum"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q1-3",
+          "label": "The point around which the lever turns is the…",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Effort",
+            "Load",
+            "Fulcrum"
+          ]
+        },
+        {
+          "type": "sketch",
+          "id": "q1-sketch",
+          "text": "Sketch the lever on paper. Label the load, effort, and fulcrum. Show your teacher; keep the sketch for your work record."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "number": 2,
+      "title": "Measure From The Right Place",
+      "part": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Press Reset. Set both masses to 200 g. Place the load 100 mm to the left and the effort 150 mm to the right of the fulcrum. Enter both Arm Distances below."
+        },
+        {
+          "type": "image",
+          "src": "assets/q02.png",
+          "alt": "Q2: unequal arms. The load is left of the fulcrum and the effort is right. Both arm-length labels are blank."
+        },
+        {
+          "type": "field",
+          "id": "q2-load",
+          "label": "Load Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q2-effort",
+          "label": "Effort Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q2-explain",
+          "label": "A student says, “The Effort Distance is 250 mm because that is the distance between the two objects.” Do you agree? Explain where an Effort Distance measurement begins and ends.",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "number": 3,
+      "title": "Start With Equal Masses And Equal Distances",
+      "part": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Continue from Question 2. Press Hold Level before moving the weight. Move only the effort 50 mm toward the fulcrum, so its distance is now 100 mm. Keep both masses at 200 g and the Load Distance at 100 mm."
+        },
+        {
+          "type": "image",
+          "src": "assets/q03.png",
+          "alt": "Q3: load and effort are each 100 mm from the fulcrum."
+        },
+        {
+          "type": "field",
+          "id": "q3-prediction",
+          "label": "Predict what will happen when you press Release.",
+          "kind": "choice",
+          "purpose": "prediction",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q3-reason",
+          "label": "Explain your prediction.",
+          "kind": "paragraph",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q3-result",
+          "label": "Press Release. What happened?",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q3-equal",
+          "label": "What is equal on the two sides of this arrangement?",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "number": 4,
+      "title": "Change Only The Load Mass",
+      "part": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Continue from Question 3. Press Hold Level. Change the Load Mass to 400 g. Keep the Effort Mass at 200 g and both distances at 100 mm."
+        },
+        {
+          "type": "image",
+          "src": "assets/q04.png",
+          "alt": "A 400 g load and 200 g effort mass each have a 100 mm arm."
+        },
+        {
+          "type": "field",
+          "id": "q4-prediction",
+          "label": "Predict what will happen when you press Release.",
+          "kind": "choice",
+          "purpose": "prediction",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q4-reason",
+          "label": "Explain your prediction.",
+          "kind": "paragraph",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q4-result",
+          "label": "Press Release. Record the result.",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q4-changed",
+          "label": "Which quantity did you change?",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Load Mass",
+            "Effort Mass",
+            "Load Distance",
+            "Effort Distance"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q4-from",
+          "label": "Previous Load Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q4-to",
+          "label": "New Load Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q4-effort",
+          "label": "Unchanged Effort Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q4-load-distance",
+          "label": "Unchanged Load Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q4-effort-distance",
+          "label": "Unchanged Effort Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "text",
+          "text": "The Fulcrum stayed in the same position."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "number": 5,
+      "title": "Balance It By Moving The Effort",
+      "part": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Press Hold Level. Keep the 400 g load at 100 mm and the 200 g Effort Mass. Move only the effort to 200 mm from the fulcrum."
+        },
+        {
+          "type": "image",
+          "src": "assets/q05.png",
+          "alt": "Q5: 400 g load at 100 mm; 200 g effort mass at 200 mm."
+        },
+        {
+          "type": "field",
+          "id": "q5-prediction",
+          "label": "Predict what will happen when you press Release.",
+          "kind": "choice",
+          "purpose": "prediction",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q5-result",
+          "label": "Press Release. Record the result.",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q5-change",
+          "label": "Did balancing this heavier load require adding more Effort Mass? What changed instead?",
+          "kind": "paragraph",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q5-claim",
+          "label": "Use your result to respond to this claim: “The heavier object must always move down.”",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "number": 6,
+      "title": "Balance It By Changing Effort Mass",
+      "part": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Press Hold Level. Set the Load Mass to 400 g, the Effort Mass to 200 g, and both distances to 100 mm. Keep both positions fixed. Adjust only Effort Mass; press Release to test. Press Hold Level before each retry until the lever balances."
+        },
+        {
+          "type": "image",
+          "src": "assets/q06.png",
+          "alt": "Q6: a 400 g load and an unknown effort mass each have a 100 mm arm. The drawn effort size is illustrative."
+        },
+        {
+          "type": "field",
+          "id": "q6-mass",
+          "label": "Effort Mass that balanced the load (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q6-compare",
+          "label": "Compare Questions 5 and 6. What are two different ways you balanced the same load?",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "number": 7,
+      "title": "Investigate Effort Distance",
+      "part": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Press Reset. Set the Load Mass to 300 g and the Load Distance to 100 mm. Keep the Load Mass, load position, and fulcrum fixed."
+        },
+        {
+          "type": "image",
+          "src": "assets/q07.png",
+          "alt": "Near and far trials: effort distances of 75 mm and 200 mm, with the load arm held at 100 mm. Effort masses are unknown."
+        },
+        {
+          "type": "text",
+          "text": "For each trial: predict the Effort Mass needed to balance. Press Hold Level, set that trial’s Effort Distance, and set Effort Mass to your prediction. Press Release. If it tips, press Hold Level, adjust only Effort Mass, and press Release again. Record the final mass even if your first prediction was correct. Keep your original prediction."
+        },
+        {
+          "type": "text",
+          "text": "Trial: Effort Distance 75 mm"
+        },
+        {
+          "type": "field",
+          "id": "q7-75-prediction",
+          "label": "Predicted Effort Mass (g)",
+          "kind": "number",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q7-75-final",
+          "label": "Effort Mass That Balanced (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "text",
+          "text": "Trial: Effort Distance 100 mm"
+        },
+        {
+          "type": "field",
+          "id": "q7-100-prediction",
+          "label": "Predicted Effort Mass (g)",
+          "kind": "number",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q7-100-final",
+          "label": "Effort Mass That Balanced (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "text",
+          "text": "Trial: Effort Distance 150 mm"
+        },
+        {
+          "type": "field",
+          "id": "q7-150-prediction",
+          "label": "Predicted Effort Mass (g)",
+          "kind": "number",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q7-150-final",
+          "label": "Effort Mass That Balanced (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "text",
+          "text": "Trial: Effort Distance 200 mm"
+        },
+        {
+          "type": "field",
+          "id": "q7-200-prediction",
+          "label": "Predicted Effort Mass (g)",
+          "kind": "number",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q7-200-final",
+          "label": "Effort Mass That Balanced (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q7-pattern",
+          "label": "What happens to the balancing Effort Mass as the effort moves farther from the fulcrum?",
+          "kind": "paragraph",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q7-double",
+          "label": "Compare the 100 mm and 200 mm trials. When Effort Distance doubled, what happened to the Effort Mass needed for balance? Use your recorded values.",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "number": 8,
+      "title": "Investigate Load Distance",
+      "part": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Press Reset. Set the Load Mass to 200 g and the Effort Distance to 200 mm. Keep the fulcrum in the same position."
+        },
+        {
+          "type": "image",
+          "src": "assets/q08.png",
+          "alt": "Load-distance trials of 100 mm and 200 mm, with a fixed 200 mm effort arm and unknown effort masses."
+        },
+        {
+          "type": "text",
+          "text": "For each row, predict the Effort Mass needed for balance. Press Hold Level, set the Load Distance for that row, and set Effort Mass to your prediction. Press Release. If needed, press Hold Level and adjust only Effort Mass before testing again. Fill both mass fields, even if your first prediction is correct."
+        },
+        {
+          "type": "text",
+          "text": "Trial: Load Distance 100 mm"
+        },
+        {
+          "type": "field",
+          "id": "q8-100-prediction",
+          "label": "Predicted Effort Mass (g)",
+          "kind": "number",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q8-100-final",
+          "label": "Effort Mass That Balanced (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "text",
+          "text": "Trial: Load Distance 150 mm"
+        },
+        {
+          "type": "field",
+          "id": "q8-150-prediction",
+          "label": "Predicted Effort Mass (g)",
+          "kind": "number",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q8-150-final",
+          "label": "Effort Mass That Balanced (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "text",
+          "text": "Trial: Load Distance 200 mm"
+        },
+        {
+          "type": "field",
+          "id": "q8-200-prediction",
+          "label": "Predicted Effort Mass (g)",
+          "kind": "number",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q8-200-final",
+          "label": "Effort Mass That Balanced (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q8-pattern",
+          "label": "What happens to the Effort Mass needed for balance as the load moves farther from the fulcrum?",
+          "kind": "paragraph",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q8-weight",
+          "label": "Did moving the load change its mass or weight? Explain what changed about its position.",
+          "kind": "paragraph",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q8-constants",
+          "label": "Which quantities did you keep the same throughout this investigation?",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "number": 9,
+      "title": "Swap Positions",
+      "part": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Press Reset. Set the Load Mass to 200 g at a Load Distance of 100 mm. Set the Effort Mass to 100 g at an Effort Distance of 200 mm. Press Release to check that it balances, then press Hold Level."
+        },
+        {
+          "type": "image",
+          "src": "assets/q09.png",
+          "alt": "Before and after swapping the objects. Before: load arm 100 mm and effort arm 200 mm. After-swap arm labels are blank."
+        },
+        {
+          "type": "field",
+          "id": "q9-predict-mass",
+          "label": "Before Swap Positions: will either mass change?",
+          "kind": "choice",
+          "purpose": "prediction",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q9-predict-role",
+          "label": "Before Swap Positions: will the objects exchange their roles?",
+          "kind": "choice",
+          "purpose": "prediction",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q9-prediction",
+          "label": "Before Swap Positions: predict what will happen when you later press Release.",
+          "kind": "choice",
+          "purpose": "prediction",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Press Swap Positions. Record the new Arm Distances, then press Release."
+        },
+        {
+          "type": "field",
+          "id": "q9-load",
+          "label": "New Load Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q9-effort",
+          "label": "New Effort Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q9-result",
+          "label": "Record the result after Release.",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q9-explain",
+          "label": "Explain why swapping positions changed or did not change the result. Include what happened to the masses and their roles.",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "number": 10,
+      "title": "Move The Fulcrum",
+      "part": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Move the purple Fulcrum by dragging it along the beam or opening Controls and changing Beam Position (mm) in the Fulcrum panel. Press Side View for this activity."
+        },
+        {
+          "type": "text",
+          "text": "Beam Position is measured from the beam’s center: 0 mm is the center, negative is toward its marked left end, and positive is toward its right end. Arm Distances remain positive lengths measured from the Fulcrum."
+        },
+        {
+          "type": "image",
+          "src": "assets/q10.png",
+          "alt": "Fulcrum at 0 mm and at −50 mm. The first setup has equal 150 mm arms. The second arm-length labels are blank."
+        },
+        {
+          "type": "text",
+          "text": "Press Reset. Set Load Mass to 300 g, 150 mm left of the Fulcrum. Set Effort Mass to 150 g, 150 mm right of the Fulcrum. Leave the Fulcrum at Beam Position 0 mm for the first test."
+        },
+        {
+          "type": "field",
+          "id": "q10-first-prediction",
+          "label": "Predict the first result with Fulcrum Beam Position 0 mm.",
+          "kind": "choice",
+          "purpose": "prediction",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q10-first-result",
+          "label": "Press Release. Record the first result.",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Press Hold Level. Keep both masses and both object positions fixed. Change only Fulcrum Beam Position from 0 mm to −50 mm. This moves the support 50 mm toward the Load."
+        },
+        {
+          "type": "field",
+          "id": "q10-load",
+          "label": "New Load Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q10-effort",
+          "label": "New Effort Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q10-gap",
+          "label": "Distance between the two objects (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q10-second-prediction",
+          "label": "Predict the result with Fulcrum Beam Position −50 mm.",
+          "kind": "choice",
+          "purpose": "prediction",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q10-second-result",
+          "label": "Press Release. Record the new result.",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Load moves down",
+            "Effort moves down",
+            "Lever remains level"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q10-explain",
+          "label": "How did moving one support change both Arm Distances?",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "number": 11,
+      "title": "Find A Numerical Pattern",
+      "part": 2,
+      "blocks": [
+        {
+          "type": "image",
+          "src": "assets/q11.png",
+          "alt": "Question 5 arrangement: a 400 g load at 100 mm and a 200 g effort mass at 200 mm."
+        },
+        {
+          "type": "text",
+          "text": "Use the values from Question 5. Multiply each mass by its own distance. Enter numbers only; the units appear in the field labels."
+        },
+        {
+          "type": "field",
+          "id": "q11-first-load-mass",
+          "label": "Load Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-first-load-distance",
+          "label": "Load Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-first-load-product",
+          "label": "Load Mass × Load Distance (g·mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-first-effort-mass",
+          "label": "Effort Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-first-effort-distance",
+          "label": "Effort Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-first-effort-product",
+          "label": "Effort Mass × Effort Distance (g·mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-notice",
+          "label": "What do you notice about the two results?",
+          "kind": "paragraph",
+          "purpose": "response"
+        },
+        {
+          "type": "student-response-reference",
+          "question_id": "q7",
+          "text": "Display this student’s own recorded Question 7 trials here. If those responses are unavailable, use the recreation directions below. Do not supply completed trial values."
+        },
+        {
+          "type": "text",
+          "text": "Choose one balanced row from Question 7. Repeat the calculations below. If you do not have your recorded row available, recreate it: Load Mass 300 g, Load Distance 100 mm, and Effort Distance 75, 100, 150, or 200 mm. Find the balancing Effort Mass using Hold Level and Release."
+        },
+        {
+          "type": "field",
+          "id": "q11-row-load-mass",
+          "label": "Your Q7 Load Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-row-load-distance",
+          "label": "Your Q7 Load Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-row-load-product",
+          "label": "Your Q7 Load Mass × Load Distance (g·mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-row-effort-mass",
+          "label": "Your Q7 Effort Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-row-effort-distance",
+          "label": "Your Q7 Effort Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-row-effort-product",
+          "label": "Your Q7 Effort Mass × Effort Distance (g·mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q11-rule",
+          "label": "Write a rule using mass and distance together to predict balance in this game.",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "number": 12,
+      "title": "Name The Relationship: Ideal Mechanical Advantage",
+      "part": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "IMA = Effort Distance / Load Distance. Use matching units for the two distances. IMA has no unit."
+        },
+        {
+          "type": "image",
+          "src": "assets/q12.png",
+          "alt": "One lever has a longer effort arm; the other has a longer load arm."
+        },
+        {
+          "type": "text",
+          "text": "Arrangement 1: Load Distance 100 mm; Effort Distance 100 mm."
+        },
+        {
+          "type": "field",
+          "id": "q12-1-ima",
+          "label": "IMA (no unit)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q12-1-force",
+          "label": "At balance, the Effort Force is ___ the load’s weight.",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Less than",
+            "Equal to",
+            "Greater than"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Arrangement 2: Load Distance 100 mm; Effort Distance 200 mm."
+        },
+        {
+          "type": "field",
+          "id": "q12-2-ima",
+          "label": "IMA (no unit)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q12-2-force",
+          "label": "At balance, the Effort Force is ___ the load’s weight.",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Less than",
+            "Equal to",
+            "Greater than"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Arrangement 3: Load Distance 200 mm; Effort Distance 100 mm."
+        },
+        {
+          "type": "field",
+          "id": "q12-3-ima",
+          "label": "IMA (no unit)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q12-3-force",
+          "label": "At balance, the Effort Force is ___ the load’s weight.",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Less than",
+            "Equal to",
+            "Greater than"
+          ]
+        },
+        {
+          "type": "field",
+          "id": "q12-least",
+          "label": "Which arrangement needs the least Effort Force to balance the same load? Explain.",
+          "kind": "paragraph",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q12-first-class",
+          "label": "All three are First-Class Levers. Does that guarantee an IMA greater than 1?",
+          "kind": "choice",
+          "purpose": "response",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "number": 13,
+      "title": "Balance The Load — Then Make It Rise",
+      "part": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Press Reset. Set the Load Mass to 400 g, the Load Distance to 100 mm, and the Effort Mass to 200 g. Change only Effort Distance. Press Hold Level before each adjustment, then press Release to test."
+        },
+        {
+          "type": "image",
+          "src": "assets/q13.png",
+          "alt": "Starting trial: 400 g load and 200 g effort mass, with blank arm-distance labels."
+        },
+        {
+          "type": "field",
+          "id": "q13-balance",
+          "label": "Effort Distance that keeps the lever level after Release (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q13-prediction",
+          "label": "Predict an Effort Distance that will make the load rise (mm)",
+          "kind": "number",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q13-reason",
+          "label": "Explain your prediction.",
+          "kind": "paragraph",
+          "purpose": "prediction"
+        },
+        {
+          "type": "text",
+          "text": "Press Hold Level, change Effort Distance, then press Release."
+        },
+        {
+          "type": "field",
+          "id": "q13-rise",
+          "label": "An Effort Distance that successfully raised the load (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q13-difference",
+          "label": "Explain the difference between balancing the load and making it rise.",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "number": 14,
+      "title": "Design And Defend Your Own Arrangement",
+      "part": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Press Reset. Create a balanced lever with a Load Mass at least twice the Effort Mass. Keep the fulcrum at 0 mm. Press Hold Level before changing values. Choose and record all four values."
+        },
+        {
+          "type": "image",
+          "src": "assets/q14.png",
+          "alt": "The load crate and hanging effort mass shown separately from the apparatus."
+        },
+        {
+          "type": "field",
+          "id": "q14-load-mass",
+          "label": "Load Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q14-load-distance",
+          "label": "Load Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q14-effort-mass",
+          "label": "Effort Mass (g)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q14-effort-distance",
+          "label": "Effort Distance (mm)",
+          "kind": "number",
+          "purpose": "response"
+        },
+        {
+          "type": "sketch",
+          "id": "q14-sketch",
+          "text": "Draw and label your arrangement on paper. Include both masses and both Arm Distances. Show your teacher and keep the sketch for your work record."
+        },
+        {
+          "type": "field",
+          "id": "q14-before",
+          "label": "Before pressing Release, use your rule from Question 11 to explain why it should balance.",
+          "kind": "paragraph",
+          "purpose": "prediction"
+        },
+        {
+          "type": "field",
+          "id": "q14-result",
+          "label": "Press Release. Record the result and any change you made. Press Hold Level before retrying.",
+          "kind": "paragraph",
+          "purpose": "response"
+        },
+        {
+          "type": "field",
+          "id": "q14-evidence",
+          "label": "A smaller Effort Force can balance a larger load when… My evidence is…",
+          "kind": "paragraph",
+          "purpose": "response"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "inventory_format": "publication-inventory-v1",
+  "review_date": "2026-09-28",
+  "issue": "https://github.com/AbbyUsesAIThatCodes/ClassroomActivities/issues/1",
+  "decision": "selected-for-publication",
+  "scope": "Only the exact student-content file and fourteen PNG assets listed here; this is not clearance of any source archive or application.",
+  "origins": {
+    "TEXT": {
+      "author": "AI-assisted instructional authoring for AbbyUsesAIThatCodes, September 27–28, 2026",
+      "basis": "Independently composed exercises for the owner’s lever game; reviewed for copied wording, distinctive examples, and source-dependent structure.",
+      "license": "Owner-authorized publication in this project; no general reuse license assigned.",
+      "attribution": "Retain the independent-authorship statement."
+    },
+    "INTRO": {
+      "author": "AI-assisted authoring for AbbyUsesAIThatCodes, September 28, 2026",
+      "basis": "New student directions composed during issue #1 from the agreed workflow and the owner’s game behavior.",
+      "license": "Owner-authorized publication in this project; no general reuse license assigned.",
+      "attribution": "Retain the independent-authorship statement."
+    },
+    "ART": {
+      "author": "AbbyUsesAIThatCodes projects, with AI assistance",
+      "basis": "Procedural game geometry, orthographic hidden-line rendering, independently authored labels, and individually reviewed student diagram crops. No source-publisher image or imported CAD geometry is selected.",
+      "geometry_source": "https://github.com/AbbyUsesAIThatCodes/LeversLoadEffortDistance/blob/04ec60fe3218f44c96de77722ea63dd80cb7a129/src/apparatus.js",
+      "geometry_git_blob": "6704676cb57791b63a796c809cfd06ca9dc10e1d",
+      "predecessor_geometry": "https://github.com/AbbyUsesAIThatCodes/ThreeKindsOfLevers/blob/b017384dbcd433ab34e8c432e2a5d4a94846e6e2/src/scene.js",
+      "license": "Owner-authorized publication of the selected project artwork; no general reuse license assigned.",
+      "attribution": "Retain THIRD_PARTY_NOTICES.md. No game libraries or font software are bundled."
+    }
+  },
+  "content": {
+    "path": "student-content.json",
+    "sha256": "6099e176da1c7734eaf20319557918acececb4bc1542b10a2c77519b2f03158a",
+    "origins": [
+      "TEXT",
+      "INTRO"
+    ],
+    "coverage": "All titles, instructions, labels, choices, sketch directions, image descriptions, and reference-block directions. Questions are individually identified below."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "number": 1,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Game-specific object roles, sentence completions, and a student sketch; common lever terminology.",
+      "response_ids": [
+        "q1-1",
+        "q1-2",
+        "q1-3",
+        "q1-sketch"
+      ]
+    },
+    {
+      "id": "q2",
+      "number": 2,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Independently authored game measurement setup and misconception check using the two specified arm distances.",
+      "response_ids": [
+        "q2-load",
+        "q2-effort",
+        "q2-explain"
+      ]
+    },
+    {
+      "id": "q3",
+      "number": 3,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Controlled game trial with equal masses and arm distances; separate prediction and observation.",
+      "response_ids": [
+        "q3-prediction",
+        "q3-reason",
+        "q3-result",
+        "q3-equal"
+      ]
+    },
+    {
+      "id": "q4",
+      "number": 4,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Game trial changing only load mass; prompts explicitly track the controlled quantities.",
+      "response_ids": [
+        "q4-prediction",
+        "q4-reason",
+        "q4-result",
+        "q4-changed",
+        "q4-from",
+        "q4-to",
+        "q4-effort",
+        "q4-load-distance",
+        "q4-effort-distance"
+      ]
+    },
+    {
+      "id": "q5",
+      "number": 5,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Game-specific distance change and evidence-based response to a mass-only claim.",
+      "response_ids": [
+        "q5-prediction",
+        "q5-result",
+        "q5-change",
+        "q5-claim"
+      ]
+    },
+    {
+      "id": "q6",
+      "number": 6,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Game-specific mass adjustment and comparison of two balancing methods.",
+      "response_ids": [
+        "q6-mass",
+        "q6-compare"
+      ]
+    },
+    {
+      "id": "q7",
+      "number": 7,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Authored four-trial game investigation with separate predicted and observed mass fields.",
+      "response_ids": [
+        "q7-75-prediction",
+        "q7-75-final",
+        "q7-100-prediction",
+        "q7-100-final",
+        "q7-150-prediction",
+        "q7-150-final",
+        "q7-200-prediction",
+        "q7-200-final",
+        "q7-pattern",
+        "q7-double"
+      ]
+    },
+    {
+      "id": "q8",
+      "number": 8,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Authored three-trial game investigation controlling load mass and effort distance.",
+      "response_ids": [
+        "q8-100-prediction",
+        "q8-100-final",
+        "q8-150-prediction",
+        "q8-150-final",
+        "q8-200-prediction",
+        "q8-200-final",
+        "q8-pattern",
+        "q8-weight",
+        "q8-constants"
+      ]
+    },
+    {
+      "id": "q9",
+      "number": 9,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Exercise about the owner’s Swap Positions control and role identity.",
+      "response_ids": [
+        "q9-predict-mass",
+        "q9-predict-role",
+        "q9-prediction",
+        "q9-load",
+        "q9-effort",
+        "q9-result",
+        "q9-explain"
+      ]
+    },
+    {
+      "id": "q10",
+      "number": 10,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Exercise using the owner’s signed beam coordinate controls and movable pivot.",
+      "response_ids": [
+        "q10-first-prediction",
+        "q10-first-result",
+        "q10-load",
+        "q10-effort",
+        "q10-gap",
+        "q10-second-prediction",
+        "q10-second-result",
+        "q10-explain"
+      ]
+    },
+    {
+      "id": "q11",
+      "number": 11,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Calculations from the student’s own trials and a general mass-distance relationship; no supplied solutions.",
+      "response_ids": [
+        "q11-first-load-mass",
+        "q11-first-load-distance",
+        "q11-first-load-product",
+        "q11-first-effort-mass",
+        "q11-first-effort-distance",
+        "q11-first-effort-product",
+        "q11-notice",
+        "q11-row-load-mass",
+        "q11-row-load-distance",
+        "q11-row-load-product",
+        "q11-row-effort-mass",
+        "q11-row-effort-distance",
+        "q11-row-effort-product",
+        "q11-rule"
+      ]
+    },
+    {
+      "id": "q12",
+      "number": 12,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "General ideal-mechanical-advantage formula applied to independently chosen first-class arrangements.",
+      "response_ids": [
+        "q12-1-ima",
+        "q12-1-force",
+        "q12-2-ima",
+        "q12-2-force",
+        "q12-3-ima",
+        "q12-3-force",
+        "q12-least",
+        "q12-first-class"
+      ]
+    },
+    {
+      "id": "q13",
+      "number": 13,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Game experiment distinguishing balance from raising a load with a controlled distance change.",
+      "response_ids": [
+        "q13-balance",
+        "q13-prediction",
+        "q13-reason",
+        "q13-rise",
+        "q13-difference"
+      ]
+    },
+    {
+      "id": "q14",
+      "number": 14,
+      "origin": "TEXT",
+      "decision": "selected-for-publication",
+      "basis": "Student-designed arrangement, paper sketch, prediction, test, and explanation.",
+      "response_ids": [
+        "q14-load-mass",
+        "q14-load-distance",
+        "q14-effort-mass",
+        "q14-effort-distance",
+        "q14-sketch",
+        "q14-before",
+        "q14-result",
+        "q14-evidence"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/q01.png",
+      "question_id": "q1",
+      "sha256": "d9de6bd0788fd06b0259685610e0d85fcc707bf802eb27a80ef48b101fb00afc",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q02.png",
+      "question_id": "q2",
+      "sha256": "390f4491c11e1f7b5ee4687e4d0b054b0d289c55733640b7ed0d080d21e42f74",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q03.png",
+      "question_id": "q3",
+      "sha256": "0efe4b852194007f4b5432ef3cb1fe51b5024577e72065284b102a9151e9e9ac",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q04.png",
+      "question_id": "q4",
+      "sha256": "83379d0e42ffe511f2daeb96a8d8ad9e9df6285be82508cad6406b252d73a78c",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q05.png",
+      "question_id": "q5",
+      "sha256": "f6e010cdf5a098d90fcb8655ba3b89a76da36b1b4c7217c70eba108418b2e452",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q06.png",
+      "question_id": "q6",
+      "sha256": "af0cc69b2c6b984346fe3456a9ab43d54e0b2990fb674f32216ce2be968009e6",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q07.png",
+      "question_id": "q7",
+      "sha256": "c5aae72f296849e9cd2ffceaa33fdfd30d894defef8fee232f01d2dfe5cd1a2e",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q08.png",
+      "question_id": "q8",
+      "sha256": "6d622c9b28b36758d018ea87a27b35b96c2ffd526fa5eccff669ffd2be5d78dc",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q09.png",
+      "question_id": "q9",
+      "sha256": "fab2f31fd8908036cbbb1a94927789b3168e11a206409c7f48ee8726dee48e97",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q10.png",
+      "question_id": "q10",
+      "sha256": "f265ee1f0d4aa0a1ee2b2048b36637ba207ef8abfa58f5320e6121bf977f778e",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q11.png",
+      "question_id": "q11",
+      "sha256": "f5e7b9bf25e123053a07c42f5811de37bd6c5ac6e809596c4ddf5c3d9d13c698",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q12.png",
+      "question_id": "q12",
+      "sha256": "420572fa0c7e0d6be5347c30d08b0d54845eeeca8349fdffc18356da9992a8bb",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q13.png",
+      "question_id": "q13",
+      "sha256": "6a18737971ce607913d1f1ed943629accb9e1897a658953496573931dcfb2960",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    },
+    {
+      "path": "assets/q14.png",
+      "question_id": "q14",
+      "sha256": "85ef5e8589eaac64ac2a75a9c043f096ffc5f5f26fb340b7c0d92be1b219fb4e",
+      "origin": "ART",
+      "decision": "selected-for-publication"
+    }
+  ]
+}
