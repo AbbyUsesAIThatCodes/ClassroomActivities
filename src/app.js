@@ -28,9 +28,25 @@ try {
   if(items.some(item=>item.id!==item.activity.activity_id))throw Error('The activity catalog does not match its content.');
   main.replaceChildren();
   if(!selectedId) {
-    main.append(el('p','Your Classroom Workspace',{class:'eyebrow'}),el('h1','Think It Through. Keep Your Work.'),el('p','Choose an activity, keep your predictions and observations together, and download your answers when you are ready.',{class:'intro'}));
+    main.classList.add('home');
+    const art=(name,className)=>el('img',null,{src:`src/art/${name}.svg`,alt:'',class:className,decoding:'async','aria-hidden':'true'});
+    const hero=el('section',null,{class:'classroom-hero','aria-labelledby':'classroom-title'});
+    const copy=el('div',null,{class:'hero-copy'});
+    copy.append(el('p','YOUR DIGITAL CLASSROOM',{class:'eyebrow'}),el('h1','Engineering Classroom - Digital Services',{id:'classroom-title'}),el('p','Click Open Activity to begin.',{class:'intro'}));
+    const courses=el('div',null,{class:'course-labels'});
+    for(const [mark,label] of [['ees-cog-drafting-table','Engineering Essentials'],['dm-cube-studio','Design And Modeling']]){const badge=el('span');badge.append(art(mark,'course-mark'),el('span',label));courses.append(badge);}
+    copy.append(courses);
+    const collage=el('div',null,{class:'classroom-collage','aria-hidden':'true'});
+    collage.append(art('ees-cog-drafting-table','collage-cog'),art('dm-cube-studio','collage-cube'),art('vex-parts','collage-parts'),art('lever-apparatus','collage-lever'),art('classroom-caliper','collage-caliper'));
+    hero.append(copy,collage);main.append(hero);
     const cards=el('div',null,{class:'cards'});
-    for(const item of items) {const card=el('section',null,{class:'card'});card.append(el('p',`${item.activity.parts.length} Parts · ${item.activity.questions.length} Questions`,{class:'eyebrow'}),el('h2',item.activity.title),el('p',item.description),el('a','Open Activity →',{href:`?activity=${item.id}`}));cards.append(card);}main.append(cards);
+    for(const item of items) {
+      const card=el('section',null,{class:'card'}),image=el('div',null,{class:'card-art','aria-hidden':'true'});
+      image.append(art(item.id==='levers-load-effort-distance'?'lever-apparatus':'classroom-caliper','card-illustration'));
+      const body=el('div',null,{class:'card-body'});
+      body.append(el('p',`${item.activity.parts.length} Parts · ${item.activity.questions.length} Questions`,{class:'eyebrow'}),el('h2',item.activity.title),el('p',item.description),el('a','Open Activity →',{href:`?activity=${item.id}`}));
+      card.append(image,body);cards.append(card);
+    }main.append(cards);
     main.append(el('p','Development preview for teacher review. The school-device and Google Classroom trial comes next.',{class:'notice'}));
   } else {
     const selected=items.find(item=>item.id===selectedId);if(!selected)throw Error('This activity was not found. Return to All Activities and choose one from the list.');

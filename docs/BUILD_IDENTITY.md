@@ -8,6 +8,8 @@ Canonical pattern: `VERSION_CODENAME_SCOPE_build-NNN_UTC_gREVISION[-dirty-FINGER
 
 ## Commands
 
+The pastel classroom refresh adds six selected SVGs and their notices under `src/art/` to the explicit publication list. Their bytes are covered by the existing `src` build-input fingerprint; the full footer identifier remains visible and copyable. See [Classroom Artwork](CLASSROOM_ART.md) for the source inventory.
+
 With Node 22+ and Python 3, use `npm test`, `npm run verify:content`, and `npm run build`. No runtime package install or bundler dependency is needed. The source preview (`npm run serve`) is labeled **Development Source · Unbuilt**. To inspect a real build, serve the repository and open the exact generated `dist/<identifier>/` path. Keep that directory together; an existing artifact is reused without renaming or regenerating its manifest.
 
 Before a PR exists or shared allocation is unavailable, `npm run build` uses a random session-specific `local-*` scope persisted under `.local-builds/session.json`. Atomic exclusive file creation reserves increasing local ordinals under `.local-builds/<scope>/`. New workspace sessions get distinct scopes. Retain that directory for repeated local builds; explicitly setting `LOCAL_BUILD_SCOPE` requires retaining its ledger and avoiding reuse in another workspace. Local reservations are not PR build numbers.

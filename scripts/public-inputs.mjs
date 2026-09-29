@@ -7,6 +7,7 @@ export function publicFiles(){
  if(!Array.isArray(registry)||!registry.length)throw Error('Invalid activity catalog.');
  const files=new Set(['index.html','content/activities.json']);
  for(const name of ['app.js','model.js','storage.js','format.js','styles.css'])files.add(`src/${name}`);
+ for(const name of ['ees-cog-workshop.svg','ees-cog-drafting-table.svg','dm-cube-studio.svg','classroom-caliper.svg','lever-apparatus.svg','vex-parts.svg','NOTICES.md'])files.add(`src/art/${name}`);
  const ids=new Set();
  for(const entry of registry){
   if(Object.keys(entry).sort().join(',')!=='description,id,path'||typeof entry.description!=='string'||!/^content\/[a-z0-9-]+\/student-content\.json$/.test(entry.path)||ids.has(entry.id))throw Error('Invalid or duplicate catalog entry.');

@@ -1,3 +1,20 @@
+# Pastel Classroom Review — September 28, 2026
+
+Current local review build: `0.1.0_First-Light_local-affcdff1_build-001_20260929T013651Z_g18bc577a01ad_web`. It uses clean source `18bc577a01ad6b280a639cde62b8857ff643c286`. Its manifest is retained under `docs/builds/`. The console, output directory, embedded manifest, visible footer and generated `BUILD.md` agree. This is an explicitly local build, not a PR ordinal or deployed release.
+
+- All 16 unit/integration checks and the exact C01 content verifier pass.
+- Chromium ran the existing full browser workflow against this exact built directory: draft reload, fresh-profile restoration, closed-tab resume, separate parts, downloads, keyboard navigation, error recovery, and desktop/mobile activity layouts pass.
+- The built home page was checked at 1440, 1024, 768, 390 and 320 pixels. All six selected graphics load; no horizontal overflow or page errors occur; activity links retain usable touch targets. All requested copy matches, and replaced copy is absent.
+- Home-page requests are same-origin GETs. No external artwork/font request or student-data submission was introduced.
+- Desktop and mobile screenshots were visually inspected. Caliper/lever spacing was corrected before this review build. The selected artwork and exclusions are recorded in [Classroom Artwork](CLASSROOM_ART.md).
+
+The owner explicitly approved public publication of the reviewed page and selected artwork on September 28, 2026. The earlier automated disclosure gate is resolved. This PR leaves merging to the owner; the issue #3 school-device/Classroom pilot remains open. The reviewed build is reused without regenerating its identity; the later documentation commits do not change build inputs.
+
+Review previews: [Desktop](review/pastel-desktop.png) · [Mobile](review/pastel-mobile.png).
+
+The records below are historical verification evidence.
+
+
 # Verification
 
 ## Issue #3 Pilot Preparation

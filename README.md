@@ -27,6 +27,7 @@ Activities use stable query links such as `?activity=levers-load-effort-distance
 - [Pilot Procedure](docs/PILOT.md): activity/game links, managed-device steps, Classroom round trip, and paper fallback.
 - [Pilot Results](docs/PILOT_RESULTS.md): evidence and owner sign-off; pending checks stay explicit.
 - [Content Provenance](docs/CONTENT_PROVENANCE.md): selected lever material and public boundary.
+- [Classroom Artwork](docs/CLASSROOM_ART.md): pastel course graphics, selected sources, credits, and regeneration.
 - [Decisions And Discussion](docs/DECISIONS.md): agreed direction and implementation decisions.
 - [Roadmap](docs/ROADMAP.md): bounded phases and the next school-device pilot.
 - [Contributor Instructions](AGENTS.md): working rules.
