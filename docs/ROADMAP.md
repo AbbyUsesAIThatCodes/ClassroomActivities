@@ -35,6 +35,6 @@ Read this file, DECISIONS.md, AGENTS.md, and the selected issue. Retrieve the ow
 
 ## Current Handoff
 
-The provenance selection is merged. Issue #2 adds the reusable interface, protected draft recovery, separate per-part JSON/text submissions, and First Light build identity. See [Verification](VERIFICATION.md) for the actual tested build.
+The provenance selection and issue #2 implementation are merged. Issue #3 preparation supplies a Pages deployment workflow, stronger automated recovery checks, a [Pilot Procedure](PILOT.md), and an unfilled [Results Record](PILOT_RESULTS.md). See [Verification](VERIFICATION.md) for actual checks and build identity. Preparation does not complete issue #3.
 
-Next is [issue #3](https://github.com/AbbyUsesAIThatCodes/ClassroomActivities/issues/3): choose hosting, verify the selected lever game against the activity on managed school devices, and complete a real download → attachment → Turn In round trip. Preserve the difference between browser automation and a school-device trial. Automated grading, imports, and class-wide release remain outside this PR.
+After the preparation PR is merged and Pages succeeds, the owner tests the deployed activity and **Levers: Load, Effort, and Distance** on managed school devices, completes both parts' download → attachment → Turn In → teacher-review round trip, and records cross-device restoration. Resolve important blockers and record owner sign-off before closing issue #3 or assigning broadly. School-account integration remains deferred; automated grading and imports remain later work.

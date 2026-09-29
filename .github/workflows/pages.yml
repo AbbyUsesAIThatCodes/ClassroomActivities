@@ -1,0 +1,86 @@
+name: Publish Pilot To Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Keep one deployment in flight. Never deploy PR branches or build-ledger.
+concurrency:
+  group: classroom-activities-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Atomic reservation and claim on build-ledger only.
+    outputs:
+      identifier: ${{ steps.build.outputs.identifier }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: npm test
+      - run: npm run verify:content
+      - name: Reserve Main Build
+        id: reserve
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run reserve:build -- main
+      - name: Build The Cleared Student App
+        id: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESERVATION: ${{ steps.reserve.outputs.reservation }}
+        run: npm run build -- --reservation "$RESERVATION"
+      - name: Install Browser Test Tools Outside The Source Tree
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser-tools" --no-audit --no-fund playwright@1.58.2
+          "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Check The Exact Artifact In Chromium
+        env:
+          BUILD_DIRECTORY: ${{ steps.build.outputs.directory }}
+        run: |
+          export PLAYWRIGHT_MODULE="$RUNNER_TEMP/browser-tools/node_modules/playwright"
+          export TEST_BASE_URL="http://127.0.0.1:4173/$BUILD_DIRECTORY/"
+          node tests/browser-smoke.mjs
+      - name: Retain The Identified Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.identifier }}
+          path: ${{ steps.build.outputs.directory }}/
+          include-hidden-files: true
+          if-no-files-found: error
+      - name: Package Only The Verified Build
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.build.outputs.directory }}/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy The Same Artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Record The Deployed Pilot
+        env:
+          BUILD_ID: ${{ needs.build.outputs.identifier }}
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          printf '## Deployed Pilot\n\nBuild: `%s`\n\nURL: %s\n\nSchool-device and Classroom sign-off remains issue #3.\n' "$BUILD_ID" "$PAGE_URL" >> "$GITHUB_STEP_SUMMARY"
