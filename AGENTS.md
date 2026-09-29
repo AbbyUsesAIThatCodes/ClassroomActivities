@@ -25,6 +25,8 @@ The D01 lever draft remains private. Issue #1 cleared only the exact selection i
 
 Issue #2 implements the shared development workflow. Keep question text, illustrations, and answer fields together, retain the separate game when needed, and support answer-file submission through Google Classroom. The managed-device pilot and release remain issue #3. School-account integration is not authorized at this stage.
 
+For issue #3, follow docs/PILOT.md and record only observed results in docs/PILOT_RESULTS.md. Preparation, local/hosted browser tests, and successful Pages deployment do not substitute for owner-led managed-device and Classroom evidence. Do not use an issue-closing PR keyword until all acceptance conditions are supported.
+
 Use fictional data for public examples and tests. Keep answer keys and future grading tools separate from the public student application.
 
 Use Title Case for authored interface and document headings. Preserve exact game control names in bold and instructional vocabulary in bold plus underline when carrying forward reviewed activity content.

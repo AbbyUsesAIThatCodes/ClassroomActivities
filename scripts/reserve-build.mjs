@@ -1,16 +1,22 @@
 import {execFileSync} from 'node:child_process';
+import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
 export const ledgerBranch='build-ledger';
 export async function reserve({repository,token,scope,source,request=fetch}) {
-  if(!/^pr-[1-9]\d*$/.test(scope))throw Error('PR reservations require an existing PR scope such as pr-6.');
+  if(!/^(pr-[1-9]\d*|main)$/.test(scope))throw Error('Use an existing PR scope or main for a merged deployment.');
   if(!/^[\w.-]+\/[\w.-]+$/.test(repository)||!/^[a-f0-9]{40}$/.test(source)||!token)throw Error('Repository, token, and full source SHA are required.');
   const base=`https://api.github.com/repos/${repository}`;
   const headers={Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'};
   const call=(path,options={})=>request(`${base}${path}`,{...options,headers});
-  const pr=await call(`/pulls/${scope.slice(3)}`);
-  if(!pr.ok)throw Error('Cannot verify the existing pull request.');
-  const pull=await pr.json();
-  if(pull.state!=='open'||pull.head.sha!==source||pull.head.repo.full_name!==repository)throw Error('Reserve against the open same-repository PR head.');
+  if(scope==='main'){
+    const ref=await call('/git/ref/heads/main');
+    if(!ref.ok||(await ref.json()).object?.sha!==source)throw Error('Reserve a deployment only against the current main commit.');
+  }else{
+    const pr=await call(`/pulls/${scope.slice(3)}`);
+    if(!pr.ok)throw Error('Cannot verify the existing pull request.');
+    const pull=await pr.json();
+    if(pull.state!=='open'||pull.head.sha!==source||pull.head.repo.full_name!==repository)throw Error('Reserve against the open same-repository PR head.');
+  }
   const branch=await call(`/git/ref/heads/${ledgerBranch}`);
   if(branch.status===404){const created=await call('/git/refs',{method:'POST',body:JSON.stringify({ref:`refs/heads/${ledgerBranch}`,sha:source})});if(!created.ok&&created.status!==422)throw Error('Unable to initialize the durable build ledger.');}
   else if(!branch.ok)throw Error('Unable to read the durable build ledger.');
@@ -31,4 +37,5 @@ if(import.meta.url===pathToFileURL(process.argv[1]||'').href){
   const result=await reserve({repository:process.env.GITHUB_REPOSITORY,token:process.env.GITHUB_TOKEN,scope:process.argv[2],source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim()});
   console.log(JSON.stringify(result,null,2));
   console.log(`Build With: npm run build -- --reservation ${result.path}`);
+  if(process.env.GITHUB_OUTPUT)fs.appendFileSync(process.env.GITHUB_OUTPUT,`reservation=${result.path}\n`);
 }

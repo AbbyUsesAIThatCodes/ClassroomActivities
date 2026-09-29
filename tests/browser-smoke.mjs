@@ -25,6 +25,18 @@ try {
  assert.ok(await page.locator('.prediction strong').count()>0);
  await page.locator('.question-link[data-question="q7"]').click();const input=page.locator('article input').first();const earlierId=await input.getAttribute('id');await input.fill('123 fictional trial');
  const backup=await download('#backup','draft.json');const draft=JSON.parse(backup);assert.equal(draft.answers[earlierId],'123 fictional trial');
+ // A clean browser profile represents a second device: no shared localStorage.
+ const fresh=await browser.newContext();const resumed=await fresh.newPage();
+ await resumed.goto(`${base}?activity=levers-load-effort-distance`);await resumed.locator('#student-name').waitFor();
+ assert.equal(await resumed.locator('#student-name').inputValue(),'');
+ await resumed.locator('#restore-file').setInputFiles('test-results/draft.json');
+ await resumed.locator('#confirm-restore').click();
+ assert.equal(await resumed.locator('#student-name').inputValue(),'Practice Student');
+ assert.equal(await resumed.locator(`#${earlierId}`).inputValue(),'123 fictional trial');
+ await resumed.close();const reopened=await fresh.newPage();
+ await reopened.goto(`${base}?activity=levers-load-effort-distance`);await reopened.locator(`#${earlierId}`).waitFor();
+ assert.equal(await reopened.locator(`#${earlierId}`).inputValue(),'123 fictional trial');
+ await fresh.close();
  await page.locator('#part-picker').selectOption('2');await page.locator('.question-link[data-question="q11"]').click();assert.ok((await page.locator('.reference').innerText()).includes('123 fictional trial'));
  await page.locator('#prepare-submission').click();assert.ok((await page.locator('dialog').innerText()).includes('incomplete'));
  const part2=JSON.parse(await download('#download-answers','part2.json'));assert.ok(part2.responses.every(r=>r.question_number>=9));assert.ok(!part2.responses.some(r=>r.response_id===earlierId));
@@ -58,5 +70,5 @@ try {
  const broken=await browser.newContext();await broken.addInitScript(()=>{const key='classroom-activities:draft:v1:workflow-practice:C01:';const original=Storage.prototype.getItem;Storage.prototype.getItem=function(k){return k.startsWith(key)?'{broken':original.call(this,k);};});const corrupt=await broken.newPage();await corrupt.goto(`${base}?activity=workflow-practice`);await corrupt.getByRole('button',{name:'Download Saved Browser Data'}).waitFor();assert.ok((await corrupt.locator('#save-status').innerText()).includes('left untouched'));await broken.close();
  const older=await browser.newContext();await older.addInitScript(()=>localStorage.setItem('classroom-activities:draft:v1:workflow-practice:C00:earlier',JSON.stringify({fictional:'old work'})));const oldPage=await older.newPage();await oldPage.goto(`${base}?activity=workflow-practice`);await oldPage.getByRole('button',{name:'Recover Other Saved Versions'}).click();await oldPage.getByRole('button',{name:'Download Earlier Draft 1 (C00)'}).waitFor();assert.equal(await oldPage.locator('#student-name').inputValue(),'');await older.close();
  assert.deepEqual(errors,[]);
- console.log(JSON.stringify({status:'PASS',build:buildText,checks:['desktop/mobile layout','reload autosave','prediction/observation distinction','Q7 reference','part isolation','paired export snapshot','missing-field navigation','portable restoration','incompatible/submission rejection','activity isolation','literal answer markup','visible build consistency','keyboard navigation','cross-tab conflict','storage denial','corrupt recovery','earlier-revision recovery notice'],screenshots:['test-results/desktop.png','test-results/mobile.png']},null,2));
+ console.log(JSON.stringify({status:'PASS',build:buildText,checks:['desktop/mobile layout','reload autosave','prediction/observation distinction','Q7 reference','part isolation','paired export snapshot','missing-field navigation','portable restoration','fresh-profile restore and closed-tab resume','incompatible/submission rejection','activity isolation','literal answer markup','visible build consistency','keyboard navigation','cross-tab conflict','storage denial','corrupt recovery','earlier-revision recovery notice'],screenshots:['test-results/desktop.png','test-results/mobile.png']},null,2));
 }finally{await browser.close();server?.kill();}

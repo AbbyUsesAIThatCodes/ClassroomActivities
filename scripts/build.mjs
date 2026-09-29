@@ -12,7 +12,7 @@ execFileSync('python3',['scripts/verify_lever_content.py'],{stdio:'inherit'});
 const publication=publicFiles();
 const source=git('rev-parse','HEAD');
 const dirty=Boolean(git('status','--porcelain','--untracked-files=normal'));
-const inputs=['index.html','src','content','release.json','package.json','scripts/build.mjs','scripts/reserve-build.mjs','scripts/verify_lever_content.py','scripts/public-inputs.mjs'];
+const inputs=['index.html','src','content','release.json','package.json','scripts/build.mjs','scripts/reserve-build.mjs','scripts/verify_lever_content.py','scripts/public-inputs.mjs','.github/workflows/pages.yml'];
 const inputFiles=[];
 function walk(file){const stat=fs.lstatSync(file);if(stat.isSymbolicLink())throw Error('Build inputs cannot be symlinks.');if(stat.isDirectory())for(const name of fs.readdirSync(file).sort())walk(path.join(file,name));else inputFiles.push(file);}
 inputs.forEach(walk);
@@ -21,8 +21,8 @@ const fingerprint=hash.digest('hex');
 let reservation;
 const arg=process.argv.indexOf('--reservation');
 if(arg!==-1){
-  if(dirty)throw Error('A PR build requires a clean source checkout. Use an explicit local build for dirty work.');
-  const record=process.argv[arg+1];if(!/^reservations\/pr-[1-9]\d*\/\d{6}\.json$/.test(record))throw Error('Invalid reservation path.');
+  if(dirty)throw Error('A reserved build requires a clean source checkout. Use an explicit local build for dirty work.');
+  const record=process.argv[arg+1];if(!/^reservations\/(pr-[1-9]\d*|main)\/\d{6}\.json$/.test(record))throw Error('Invalid reservation path.');
   git('fetch','origin','build-ledger');
   reservation=JSON.parse(git('show',`FETCH_HEAD:${record}`));
   if(reservation.source_revision!==source || record!==`reservations/${reservation.scope}/${String(reservation.ordinal).padStart(6,'0')}.json`)throw Error('Reservation does not match the source or ordinal.');
@@ -34,10 +34,10 @@ if(arg!==-1){
   for(let ordinal=1;ordinal<100000;ordinal++)try{const record={scope,ordinal,source_revision:source,reserved_at:new Date().toISOString()};fs.writeFileSync(`.local-builds/${scope}/${ordinal}.json`,JSON.stringify(record),{flag:'wx'});reservation=record;break;}catch(e){if(e.code!=='EEXIST')throw e;}
 }
 if(!reservation)throw Error('No build reservation allocated.');
-// A reservation is consumed on first use, including failures. PR claims are durable in the ledger.
+// A reservation is consumed on first use, including failures. Shared claims are durable in the ledger.
 if(arg!==-1){
   const token=process.env.GITHUB_TOKEN;
-  if(!token)throw Error('GITHUB_TOKEN is required to claim a PR reservation exactly once. Without it, omit --reservation to create an explicitly local build.');
+  if(!token)throw Error('GITHUB_TOKEN is required to claim a shared reservation exactly once. Without it, omit --reservation to create an explicitly local build.');
 }
 const builtAt=new Date().toISOString();
 const stamp=builtAt.replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
@@ -59,5 +59,7 @@ try{
   fs.writeFileSync(path.join(out,'BUILD.md'),report);
   const reportRoot=process.env.BUILD_REPORT_DIR||'.local-builds/reports';fs.mkdirSync(reportRoot,{recursive:true});
   fs.writeFileSync(path.join(reportRoot,`${identifier}.json`),JSON.stringify(manifest,null,2)+'\n');fs.writeFileSync(path.join(reportRoot,`${identifier}.md`),report);
+  if(process.env.GITHUB_OUTPUT)fs.appendFileSync(process.env.GITHUB_OUTPUT,`identifier=${identifier}\ndirectory=dist/${identifier}\n`);
+  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,report+'\n');
   console.log(`BUILD SUCCESS ${identifier}\nOUTPUT ${out}`);
 }catch(error){console.error(`BUILD FAILED ${identifier}`);throw error;}

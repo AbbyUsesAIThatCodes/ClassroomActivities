@@ -1,6 +1,6 @@
 ## Purpose And Behavior
 
-Explain the bounded change and link the issue it closes.
+Explain the bounded change and link the issue it addresses. Use a closing keyword only when all acceptance conditions have evidence; pilot preparation alone does not close a school-testing issue.
 
 ## Verification
 

@@ -79,8 +79,15 @@ Deferred: automated grading, Learning Compass import, direct school-account inte
 
 See [Drafts And Answer Files](ANSWER_FILES.md), [Build Identity](BUILD_IDENTITY.md), and [Verification](VERIFICATION.md) for exact contracts and observed results. Earlier checkpoint/prototype descriptions above are historical, not current verification claims.
 
+## Issue #3 Pilot Preparation
+
+- The owner reported selecting GitHub Actions as the Pages source. The new workflow builds cleared content after merge to `main`, checks that artifact, and deploys the same bytes. PR branches never deploy.
+- Deployment builds use an explicit `main` scope with durable reservations and claims; PR and local scopes keep their existing meaning. `0.1.0 First Light` and the cleared `C01` content remain unchanged.
+- The companion identified by the cleared content's lineage and matching controls is **Levers: Load, Effort, and Distance**. Its live manifest supplies a candidate identity; actual school use must record the then-current build pairing.
+- [Pilot Procedure](PILOT.md) and [Pilot Results](PILOT_RESULTS.md) separate technical preparation from owner-led evidence. Do not auto-close issue #3 when merging preparation work.
+
 ## Remaining Decisions
 
-- Hosting configuration and the exact build/game pairing for the managed-device pilot.
+- The exact deployed activity/game pairing and owner sign-off for the managed-device pilot.
 - School-device download/upload constraints and student-facing improvements found in issue #3.
 - Future grading rubric, import interfaces, and reviewed migration policy for assigned content revisions.

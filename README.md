@@ -2,7 +2,7 @@
 
 A shared home for independently authored classroom activities across courses and school years.
 
-**Current Status:** `0.1.0 First Light` is a development review of the shared activity and answer-file workflow. The cleared lever content and a short saving-practice activity run in a common student interface. No deployment or class-wide release is made by this task.
+**Current Status:** `0.1.0 First Light` is a development candidate for the owner-led classroom pilot. The cleared lever content and a short saving-practice activity run in a common student interface. The Pages workflow publishes verified builds after merge to `main`; this PR does not merge or deploy them. School-device and Google Classroom acceptance remain open in issue #3.
 
 The student workflow is: open the assigned activity, enter Name and Bell, work with prompts and answers together, keep the separate game open when needed, download the assigned part's answers, and manually attach the file to Google Classroom.
 
@@ -24,6 +24,8 @@ Activities use stable query links such as `?activity=levers-load-effort-distance
 - [Drafts And Answer Files](docs/ANSWER_FILES.md): schemas, recovery, student steps, and compatibility.
 - [Build Identity](docs/BUILD_IDENTITY.md): allocation, provenance, and location inventory.
 - [Verification](docs/VERIFICATION.md): actual review build and completed checks.
+- [Pilot Procedure](docs/PILOT.md): activity/game links, managed-device steps, Classroom round trip, and paper fallback.
+- [Pilot Results](docs/PILOT_RESULTS.md): evidence and owner sign-off; pending checks stay explicit.
 - [Content Provenance](docs/CONTENT_PROVENANCE.md): selected lever material and public boundary.
 - [Decisions And Discussion](docs/DECISIONS.md): agreed direction and implementation decisions.
 - [Roadmap](docs/ROADMAP.md): bounded phases and the next school-device pilot.
