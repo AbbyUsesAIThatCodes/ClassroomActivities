@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="130 170 910 330">
+<title>Classroom Dial Caliper — Decorative Schematic, Not To Scale</title>
+  <rect x="180" y="310" width="830" height="40" rx="2" fill="#abd4cc" stroke="#286d65" stroke-width="3"/>
+  <path d="M180 310V209L200 193V310M180 350V440L158 471H200V350" fill="#65aaa0" stroke="#286d65" stroke-width="3"/>
+  <path d="M460 310V209L440 193V310M460 350V440L482 471H440V350" fill="#80b7db" stroke="#315f81" stroke-width="3"/>
+  <rect x="460" y="279" width="195" height="93" rx="3" fill="#c6dfee" stroke="#315f81" stroke-width="3"/>
+  <rect x="618" y="250" width="20" height="30" rx="3" fill="#edb75c" stroke="#906016" stroke-width="2"/>
+  <rect x="538" y="375" width="24" height="30" rx="3" fill="#edb75c" stroke="#906016" stroke-width="2"/>
+  <circle cx="550" cy="321" r="64" fill="#cfdae1" stroke="#315f81" stroke-width="3"/>
+  <circle cx="550" cy="321" r="57" fill="#fffaf0" stroke="#c1872b" stroke-width="5"/>
+  <path d="M550 321L576 281" stroke="#293746" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="550" cy="321" r="6" fill="#293746"/>
+  <path d="M550 268v10M599 321h-10M550 374v-10M501 321h10" stroke="#906016" stroke-width="2"/>
+  <path d="M648 362h31v10" fill="none" stroke="#315f81" stroke-width="12"/>
+  <circle cx="681" cy="380" r="22" fill="#edb75c" stroke="#906016" stroke-width="3"/>
+  <circle cx="681" cy="380" r="5" fill="#906016"/>
+  <rect x="995" y="307" width="15" height="46" rx="2" fill="#65aaa0" stroke="#286d65" stroke-width="2"/>
+  <circle cx="1002" cy="315" r="2.5" fill="#233746"/><circle cx="1002" cy="345" r="2.5" fill="#233746"/>
+</svg>

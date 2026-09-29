@@ -14,7 +14,7 @@ const context=await browser.newContext({viewport:{width:1365,height:1000}});
 const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
 const download=async(selector,name)=>{const wait=page.waitForEvent('download');await page.locator(selector).click();const d=await wait;const path=`test-results/${name}`;await d.saveAs(path);return fs.readFile(path,'utf8');};
 try {
- await page.goto(base);await page.getByRole('heading',{name:'Think It Through. Keep Your Work.'}).waitFor();
+ await page.goto(base);await page.getByRole('heading',{name:'Engineering Classroom - Digital Services'}).waitFor();
  assert.equal(await page.locator('.card').count(),2);
  await page.locator('a[href="?activity=levers-load-effort-distance"]').click();
  await page.locator('#student-name').fill('Practice Student');await page.locator('#student-bell').fill('2');
