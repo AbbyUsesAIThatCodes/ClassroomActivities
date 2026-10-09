@@ -1,5 +1,7 @@
 # Classroom Activities
 
+**[Play ClassroomActivities Online](https://abbyusesaithatcodes.github.io/ClassroomActivities/)**
+
 A shared home for independently authored classroom activities across courses and school years.
 
 **Current Status:** `0.1.0 First Light` is a development candidate for the owner-led classroom pilot. The cleared lever content and a short saving-practice activity run in a common student interface. The Pages workflow publishes verified builds after merge to `main`; this PR does not merge or deploy them. School-device and Google Classroom acceptance remain open in issue #3.
